@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+ display:flex;
+ justify-content: space-between;
+ width: 70%;
+  margin: 10px 5px;
+}
+
+.nav-links{
+    display:flex;
+    border: 1.5px black solid;
+    border-radius: 25px;
+}
+
+.nav-links li{
+    list-style: none;
+    padding: 14px 14px;
+   
+}
+section{
+    height: 90vh;
+    background-color: #8bb6e7;
+    border: 1px black solid;
+}
+.main-text{
+    background-color: #c50606;
+    display: inline-block;
+    justify-content: center;
+    align-items:center;
+    color:aliceblue;
+}
