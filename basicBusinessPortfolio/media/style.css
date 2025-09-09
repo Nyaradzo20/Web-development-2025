@@ -1,19 +1,34 @@
+:root{
+    --main:#071739;
+    --secondary:#4B6382;
+    --minor1:#A4b5c4;
+    --minor2:#CDD5DB;
+    --minor3:#A3866B;
+    --minor:#E3C39D;
+
+}
 *{
     margin: 0;
     padding: 0;
+    background-color: var(--main);
 }
+
 
 .navbar {
  display:flex;
  justify-content: space-between;
- width: 70%;
+ width: 80%;
   margin: 10px 5px;
+ 
+}
+.logo{
+    color: var(--minor2);
 }
 
 .nav-links{
     display:flex;
-    border: 1.5px black solid;
-    border-radius: 25px;
+    
+ 
 }
 
 .nav-links li{
@@ -21,15 +36,34 @@
     padding: 14px 14px;
    
 }
+.nav-links a{
+    text-decoration: none;
+    color: var(--minor2);
+}
 section{
     height: 90vh;
     background-color: #8bb6e7;
-    border: 1px black solid;
+    
 }
-.main-text{
-    background-color: #c50606;
-    display: inline-block;
+.first-section{
+    background-color: var(--main);
+    display: grid;
     justify-content: center;
-    align-items:center;
+   align-items: center;
     color:aliceblue;
+    text-align: center;
+}
+.shop{
+    display: grid;
+    grid-auto-flow: column;
+}
+.shop img{
+    width: 500px;
+    height: 400px;
+    display: none;
+}
+.about-us
+{
+    display: flex;
+    justify-content: center;
 }
