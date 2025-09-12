@@ -7,11 +7,22 @@
     --minor:#E3C39D;
 
 }
+.cinzel-font {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: auto;
+  font-style: normal;
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
     background-color: var(--main);
+    font-family: "Cinzel";
 }
+
 
 
 .navbar {
@@ -43,6 +54,7 @@
 section{
     height: 90vh;
     background-color: #8bb6e7;
+    border:1px solid red;
     
 }
 .first-section{
@@ -52,6 +64,12 @@ section{
    align-items: center;
     color:aliceblue;
     text-align: center;
+}
+.main-text{
+    font-family:;
+}
+h3{
+    font-family: "Cinzel";
 }
 .shop{
     display: grid;
@@ -66,4 +84,19 @@ section{
 {
     display: flex;
     justify-content: center;
+    background-color: rgb(94, 255, 0);
+    color: hsl(0, 96%, 45%);
+    border: 1px solid white;
+}
+.card{
+    width:300px;
+    height: 200px;
+    border: 2px solid black;
+}
+.testimo{
+    background-color: #A3866B;
+    display: flex;
+}
+.Testimonials{
+    background: #A3866B;
 }
