@@ -19,7 +19,7 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: var(--main);
+    
     font-family: "Cinzel";
 }
 
@@ -58,7 +58,7 @@ section{
     
 }
 .first-section{
-    background-color: var(--main);
+    background-color: rgb(2, 66, 29);
     display: grid;
     justify-content: center;
    align-items: center;
@@ -96,7 +96,15 @@ h3{
 .testimo{
     background-color: #A3866B;
     display: flex;
+    justify-content:center;
+    width: 80%;
+ 
 }
 .Testimonials{
     background: #A3866B;
+}
+.contacts{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
