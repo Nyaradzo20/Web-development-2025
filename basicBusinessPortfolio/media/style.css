@@ -49,7 +49,6 @@
 }
 .nav-links a{
     text-decoration: none;
-    color: var(--minor2);
 }
 section{
     height: 90vh;
@@ -77,8 +76,8 @@ h3{
 }
 .shop img{
     width: 500px;
-    height: 400px;
-    display: none;
+    height: auto;
+    display:flex;
 }
 .about-us
 {
