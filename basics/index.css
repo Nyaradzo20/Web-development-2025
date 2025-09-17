@@ -1,0 +1,42 @@
+
+
+#button-list
+{   
+    padding: 0;           
+  margin: 0; 
+
+}
+a{
+    border: 1px solid black;
+    padding :19px 22px;
+    border-radius: 50%;
+    text-decoration: none;
+ 
+    
+}
+.link{
+    list-style: none;
+    border: 1px solid black;
+}
+
+li{
+    list-style:circle
+    ;
+    
+}
+.buttons{
+    margin: 0;
+}
+.one{
+    background-color: tomato;
+    
+}
+.two{
+    background-color:rgb(60, 94, 243);
+}
+.three{
+    background-color: rgb(23, 190, 99);
+}
+.four{
+    background-color: rgb(231, 231, 86);
+}
