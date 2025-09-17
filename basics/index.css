@@ -6,6 +6,9 @@
   margin: 0; 
 
 }
+#button-list li {
+      list-style:circle
+}
 a{
     border: 1px solid black;
     padding :19px 22px;
@@ -14,19 +17,14 @@ a{
  
     
 }
-.link{
-    list-style: none;
-    border: 1px solid black;
-}
+
 
 li{
     list-style:circle
     ;
     
 }
-.buttons{
-    margin: 0;
-}
+
 .one{
     background-color: tomato;
     
