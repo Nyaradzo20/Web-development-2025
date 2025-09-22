@@ -5,8 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="index.css">
+
     <title>Document</title>
+    <style>
+        /* Set default font for all elements */
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Remove padding and margin from #button-list */
+        #button-list {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Remove list style from #button-list items */
+        #button-list li {
+            list-style: none;
+        }
+
+        /* Style links inside #button-list as circular buttons */
+        #button-list a {
+            border: 1px solid black;
+            padding: 19px 22px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+        }
+
+        #header {
+            color: blue;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        /* Set default list style for all ul li elements */
+        ul li {
+            list-style: circle;
+        }
+
+        .one {
+            background-color: tomato;
+        }
+
+        .two {
+            background-color: rgb(60, 94, 243);
+        }
+
+        .three {
+            background-color: rgb(23, 190, 99);
+        }
+
+        .four {
+            background-color: rgb(255, 211, 12);
+        }
+    </style>
 </head>
 
 <body>
@@ -33,10 +89,10 @@
     <br>
     <hr>
 
-    <!--Div  divides page into sections making it easier to style.-->
+    <!--Div  divides page into sections making it easier to style.(World Wide Web Consortium, n.d.)-->
     <div id="Europe">
         <!-- Europe Section -->
-        <h1>Destination 1 : Europe</h1>
+        <h1 id="header">Destination 1 : Europe</h1>
         <ol>
             <!--Ordered lists are usually listed according to a certain order in this case
             its numbered-->
@@ -70,7 +126,7 @@
 
     <!-- Asia Section -->
     <div id="Asia">
-        <h1>Destination 2 : Asia</h1>
+        <h1 id="header">Destination 2 : Asia</h1>
         <ol>
             <li>
                 <h2>Japan</h2>
@@ -93,7 +149,7 @@
 
     <!-- America Section -->
     <div id="America">
-        <h1>Destination 3 : America</h1>
+        <h1 id="header">Destination 3 : America</h1>
         <ol>
             <li>
                 <h2>USA</h2>
@@ -124,7 +180,7 @@
 
     <!-- Africa Section -->
     <div id="Africa">
-        <h1>Destination 4 : Africa</h1>
+        <h1 id="header">Destination 4 : Africa</h1>
         <ol>
             <li>
                 <h2>South Africa</h2>

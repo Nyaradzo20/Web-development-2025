@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS file -->
+ 
+    <title>Document</title>
+
+
+    <style>
+    /* Set default font for all elements*/
+   h1{
+    margin-left: 30%;
+   }
+ *{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+       /* Style images */
+img{
+    width:300px;
+    height: auto;
+    margin-left: 30%;
+    border-radius: 10px;/*makes the image edges curve*/
+    transition: opacity 0.3s ease;
+}
+
+/* Fade image on hover */
+img:hover {
+    opacity: 0.6;
+}
+
+/* Table styling */
+table, th, td {
+    border-collapse: collapse;
+    padding :20px 20px;
+}
+
+/* Paragraphs inside table cells */
+td p{
+    margin-left:35%;
+}
+
+/* Table width and alignment */
+table{ 
+    width:80%;  
+    margin-left: 8%;
+}
+
+/* Table borders */
+tr,td{
+    border: 2px solid #050236;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+    background-color: #8093fd;
+}
+
+/* Table header styling */
+th {
+    background-color: #1a40bd;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Highlight section when targeted by anchor,it helps identify the section(World Wide Web Consortium, n.d.) */
+section:target {
+    background-color: #a69cff; 
+} 
+    </style>
+</head>
+
+<body>
+    <h1>Travel Destinations</h1>
+        <!-- Travel Destinations Table -->
+        <table>
+            <!-- Table Headers -->
+            <th>Destination</th>
+            <th>Attraction</th>
+            <!-- Paris Row -->
+            <tr>
+                <td>Paris</td>
+                <td>
+                    <!-- Link to Eiffel Tower section -->
+                     <!--Pressing on this link lead to a corresponsing information secion where information about a monument is found-->
+                    <a href="#eiffel">
+                        <!-- Eiffel Tower Image -->
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1718035557075-5111d9d906d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGVmZmllbCUyMHRvd2VyfGVufDB8fDB8fHww">
+                    </a>
+                    <p><i>(Eiffel tower)</i></p>
+                </td>
+            </tr>
+            <!-- Rome Row -->
+            <tr>
+                <td>Rome</td>
+                <td>
+                    <!-- Link to Colosseum section -->
+                    <a href="#colosseum">
+                        <!-- Colosseum Image -->
+                        <img src="https://images.unsplash.com/photo-1612986023929-569221d13721?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sbG9zZXVtfGVufDB8fDB8fHww"
+                            alt="Colosseum">
+                    </a>
+                    <p><i>(Colosseum)</i></p>
+                </td>
+            </tr>
+            <!-- New York Row -->
+            <tr>
+                <td>New York</td>
+                <td>
+                    <!-- Link to Statue of Liberty section -->
+                    <a href="#liberty">
+                        <!-- Statue of Liberty Image -->
+                        <img src="https://images.unsplash.com/photo-1503572327579-b5c6afe5c5c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhdHVlJTIwb2YlMjBsaWJlcnR5fGVufDB8fDB8fHww"
+                            alt="Statue of Liberty">
+                    </a>
+                    <!--writes and italices the name of the monument-->
+                    <p><i>(Statue of Liberty)</i></p>
+                </td>
+            </tr>
+        </table>
+        <!--sections divide the content into section for improved layout and styling (World Wide Web Consortium, n.d)-->
+        <!-- Eiffel Tower Section -->
+        <section id="eiffel">
+            <h2>Eiffel Tower - Paris</h2>
+            <p>
+                Rising 330 m above the Seine, the Eiffel Tower isn't just Paris's postcard image , it's a working
+                monument with restaurants, glass-floored walkways and sweeping views. Built as a temporary exhibit for
+                the 1889 World's Fair, it became the city's permanent symbol of innovation and romance.
+            </p>
+        </section>
+
+        <!-- Colosseum Section -->
+        <section id="colosseum">
+            <h2>Colosseum - Rome</h2>
+            <p>
+                This massive amphitheatre, finished in 80 AD, once echoed with the roar of 50,000 spectators watching
+                gladiators, wild animals and dramas of imperial power. Today, you can wander its tiers and underground
+                passages to feel the scale of ancient Rome up close.
+            </p>
+        </section>
+
+        <!-- Statue of Liberty Section -->
+        <section id="liberty">
+            <h2>Statue of Liberty - New York</h2>
+            <p>
+                Standing at the mouth of New York Harbor, the Statue of Liberty was gifted by France in 1886 as a beacon
+                of freedom and new beginnings. Ferries take visitors to Liberty Island, where a museum explains the
+                statue's creation and you can climb up to the crown for a skyline view.
+            </p>
+        </section>
+
+</body>
+
+</html>

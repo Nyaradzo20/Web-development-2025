@@ -1,33 +1,39 @@
 
+/* Set default font for all elements for consistent typography */
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
 
+/* Remove padding and margin from #button-list to reset default spacing */
 #button-list
 {   
     padding: 0;           
-  margin: 0; 
+    margin: 0; 
+}
 
-}
+/* Remove bullet points from #button-list items  */
 #button-list li {
-      list-style:circle
+    list-style:none;
 }
-a{
+
+/* Style links inside #button-list as circular buttons  */
+#button-list a{
     border: 1px solid black;
     padding :19px 22px;
     border-radius: 50%;
     text-decoration: none;
- 
-    
+    color: white;
+    font-weight: 700;
 }
 
-
-li{
-    list-style:circle
-    ;
-    
+/* Set default list style for all ul li elements to use circles */
+ul li{
+    list-style:circle;
 }
 
+/* Button background colors */
 .one{
     background-color: tomato;
-    
 }
 .two{
     background-color:rgb(60, 94, 243);
@@ -36,5 +42,62 @@ li{
     background-color: rgb(23, 190, 99);
 }
 .four{
-    background-color: rgb(231, 231, 86);
+    background-color: rgb(255, 211, 12);
+}
+
+/* Style images */
+img{
+    width:300px;
+    height: auto;
+    margin-left: 30%;
+    border-radius: 10px;/*makes the image edges curve*/
+    transition: opacity 0.3s ease;
+}
+
+/* Fade image on hover */
+img:hover {
+    opacity: 0.6;
+}
+
+/* Table styling */
+table, th, td {
+    border-collapse: collapse;
+    padding :20px 20px;
+}
+
+/* Paragraphs inside table cells */
+td p{
+    margin-left:35%;
+}
+
+/* Table width and alignment */
+table{ 
+    width:80%;  
+    margin-left: 8%;
+}
+
+/* Table borders */
+tr,td{
+    border: 2px solid #050236;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+    background-color: #8093fd;
+}
+
+/* Table header styling */
+th {
+    background-color: #1a40bd;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Highlight section when targeted by anchor,it helps identify the section */
+section:target {
+    background-color: #a69cff; 
 }
