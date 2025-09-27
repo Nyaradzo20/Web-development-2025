@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body {
+             font-family: Arial, sans-serif;
+              margin: 2%; 
+              background-color: rgb(214, 214, 214);
+        
+              
+            }
+    
+               
+        
+          label { 
+            display: block;
+             margin-top: 15px; } 
+          textarea, select {
+             margin-top: 10px; 
+            padding: 5px;
+             width: 500px;
+              max-width: 100%; 
+            }
+
+              input{   
+                 width: 500px;
+                 height:30px;
+                }
+                 input[type="radio"] { width: auto; height: auto; }
+
+        
+    
+        textarea { 
+            height: 80px; }
+            button { 
+                margin-top: 15px;
+                 padding: 8px 16px; }
+
+    </style>
+</head>
+<body>
+    <form action="submit.html" method="post" id="formData">
+        <h1>Contact Us</h1>
+<div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+</div>
+<div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+</div>
+<div>
+    <label for="phone">Phone number:</label>
+    <input type="text" id="phone" name="phone" maxlength="10">
+</div>
+<div>
+    <label for="message">Message:</label>
+ <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message" required></textarea>
+</div>
+
+<div>
+  <label>Preferred Contact Method:</label>
+    <input type="radio" id="Email" name="preferredContact" value="Email"> Email
+    <input type="radio" id="Phone" name="preferredContact" value="Phone"> Phone
+    <input type="radio" id="Both" name="preferredContact" value="Both"> Both
+    </div>
+<div>
+<label for="inquiryType">Inquiry Type:</label>
+    <select id="inquiryType" name="inquiryType" required>
+        <option value="">Select an Option</option>
+      <option value="General Inquiry">General Inquiry</option>
+      <option value="Support Request">Support Request</option>
+      <option value="Feedback">Feedback</option>
+    </select>
+    </div>
+
+
+<button type="submit" id="btn">Submit</button>
+</form>
+
+ 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style>
+  /* 
+     This CSS block configures the page’s overall readability and usability.
+     It defines how the elements are styled on the page
+     
+  */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2%;
+    background-color: rgb(214, 214, 214);
+  }
+  /* 
+     Each label is displayed as a block to align with accessibility
+     recommendations,users can clearly associate a label with its input.
+  */
+  label { display: block; margin-top: 15px; }
+  /*
+     Form controls are given  padding and width to support
+     diverse devices and allow the user to navigate the page easily (MDN, n.d.)
+  */
+  textarea, select {
+    margin-top: 10px;
+    padding: 5px;
+    width: 500px;
+    max-width: 100%;
+  }
+  input {
+    width: 500px;
+    height: 30px;
+  }
+  /*
+     Radio buttons mantain their default style to allow to users recognise and
+      interpret them correctly.
+  */
+  input[type="radio"] { width: auto; height: auto; }
+  /*
+     The textarea height is preset to encourage multi-line messages while
+     preventing the form from becoming visually unpleasant .
+  */
+  textarea { height: 80px; }
+  
+  button {
+    margin-top: 15px;
+    padding: 8px 16px;
+  }
+  /*
+     The preview box is hidden by default and is revealed later to
+     facilitate “pre-submission verification” a usability enhancement that
+     allows users to confirm data before transmission, hiding the preview is donne using
+     display:none.
+  */
+  .preview-box {
+    display: none;
+    background: #fff;
+    border: 1px solid #999;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  div{
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  The form is used to collect data in this case 
+  It usees the POST method, which is prefferable for sensitive,unlimited data and
+  it doe not show in the url but in the body instead(submit.php) .
+-->(W3Schools, n.d.)
+<form action="submit.php" method="post" id="formData">
+  <h1>Contact Us</h1>
+
+  <!-- Collect user's name with built-in  validation - required -->  (GeeksforGeeks, n.d.)
+   <!--The label is used to label the requiremwnt while the input is used to collect data-->
+  <label for="name">Name:</label>
+
+  <input type="text" name="name" id="name" placeholder="please enter your name" required>
+
+  <!-- Collect users email address with built-in format validation "required" -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="please enter your email" required>
+
+  <!-- 
+       Collect telephone contact,the pattern attribute  lets the user
+       know what they are allowed to input ensure a valid 10-digit input, which reduces 
+       error and uneeded input.Regex is used to define the pattern.
+  -->(W3Schools, n.d.)
+  <label for="phone">Phone number:</label>
+  <input type="text" id="phone" name="phone" 
+  
+         pattern="^(\+?\d{1,3}[-.\s()]*)?(\d{3}[-.\s()]*){2}\d{4}$" 
+         placeholder="Enter 10-digit phone number" 
+         required 
+         title="Please enter a valid 10-digit phone number.">
+
+  <!-- 
+      The textarea is used by the user to enter larger chunks of
+      data, the tags should always be in the same line to allow the
+      placeholder to show otherwise only whitespaces would appear
+  -->(W3Schools, n.d.)
+  <label for="message">Message:</label>
+  <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message" required></textarea>
+
+  <!-- 
+       The user uses radio buttons to choose their preferred contact method, the type of the button
+       is set to "radio"
+  -->
+  <label>Preferred Contact Method:</label>
+  <input type="radio" id="email" name="preferredContact" value="Email" required> Email
+  <input type="radio" id="phone" name="preferredContact" value="Phone"> Phone
+  <input type="radio" id="both" name="preferredContact" value="Both"> Both
+
+  <!-- 
+       The select element is used  to create a dropdown menu, and the option is used to 
+       add options in the dropdown menu
+  -->
+  <label for="inquiryType">Inquiry Type:</label>
+  <select id="inquiryType" name="inquiryType" required>
+    <option value="">Select an Option</option>
+    <option value="General Inquiry">General Inquiry</option>
+    <option value="Support Request">Support Request</option>
+    <option value="Feedback">Feedback</option>
+  </select>
+
+  <!-- 
+  This section is for preview. it show the user the data tthey have entered and allow 
+  them to edit them before submiting
+.
+-->
+<div class="preview-box" id="previewBox">
+  <h3>Preview:</h3>
+  <p><strong>Name:</strong> <span id="pName"></span></p>
+  <p><strong>Email:</strong> <span id="pEmail"></span></p>
+  <p><strong>Phone:</strong> <span id="pPhone"></span></p>
+  <p><strong>Message:</strong> <span id="pMessage"></span></p>
+  <p><strong>Preferred Contact:</strong> <span id="pContact"></span></p>
+  <p><strong>Inquiry Type:</strong> <span id="pInquiry"></span></p>
+</div>
+<div>
+
+     <!-- 
+  The submit button validates inputs,pressing it will show what needs to be corrected or entered it is
+  required 
+-->
+  <button type="submit" id="btn">Submit</button>
+  </div>
+</form>
+
+<script>
+/*
+  This JavaScript prevents immediate POST and
+  displays the collected data back to the user.Action of the function is triggered by clicking
+  on the submit button this is made possible by the addEventListener function
+*/ /*(W3Schools, n.d.)*/
+const form = document.getElementById('formData');
+form.addEventListener('submit', function(e) {
+
+  // this block halts submission if invalid, it checks the validity of the form
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    return;
+  }
+  // Prevent direct POST to allow preview to render first.
+  e.preventDefault();
+
+  // Extract values from the form input using ids and their value using get ekement by id. (Javascripttutorial, n.d)
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+  const contact = document.querySelector('input[name="preferredContact"]:checked')?.value || '';
+  const inquiry = document.getElementById('inquiryType').value;
+
+  // This displays the preview box usind block display anf the user's 
+  //input
+  document.getElementById('pName').textContent = name;
+  document.getElementById('pEmail').textContent = email;
+  document.getElementById('pPhone').textContent = phone;
+  document.getElementById('pMessage').textContent = message;
+  document.getElementById('pContact').textContent = contact;
+  document.getElementById('pInquiry').textContent = inquiry;
+  document.getElementById('previewBox').style.display = 'block';
+
+ 
+});
+</script>
+</body>
+</html>
+<!--
+References:
+<select>: The HTML Select element - HTML | MDN. (n.d.). Retrieved September 26, 2025, from https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select
+CSS Forms. (n.d.). Retrieved September 26, 2025, from https://www.w3schools.com/css/css_form.asp
+How to add Radio Buttons in form using HTML ? - GeeksforGeeks. (n.d.). Retrieved September 26, 2025, from https://www.geeksforgeeks.org/html/how-to-add-radio-buttons-in-form-using-html/
+How to use the required attribute in HTML ? - GeeksforGeeks. (n.d.). Retrieved September 26, 2025, from https://www.geeksforgeeks.org/html/how-to-use-the-required-attribute-in-html/
+HTML <input> Pattern Attribute. (n.d.). Retrieved September 26, 2025, from https://www.w3schools.in/html5/input-pattern-attribute
+HTML DOM Element addEventListener() Method. (n.d.). Retrieved September 26, 2025, from https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+HTML textarea tag. (n.d.). Retrieved September 26, 2025, from https://www.w3schools.com/tags/tag_textarea.asp
+JavaScript getElementById() Method - Selecting an Element By Id. (n.d.). Retrieved September 26, 2025, from https://www.javascripttutorial.net/javascript-dom/javascript-getelementbyid/
+padding - CSS | MDN. (n.d.). Retrieved September 26, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+POST request method - HTTP | MDN. (2025, July 4). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST
+-->
