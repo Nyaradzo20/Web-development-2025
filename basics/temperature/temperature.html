@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    input, button,select{
+    display: block;
+    margin-top:1rem;
+    height: 3rem;
+    width: 90%;
+    margin-left:9px;
+    }
+#inputs-btns{
+    
+   width: 50%;
+   height: 40vh;
+   margin: auto;
+   border: 2px rgb(1, 1, 51) solid;
+}
+select{
+    font-size: 1.3rem;
+}
+button{
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    color: aliceblue;
+    background-color: rgb(37, 37, 236);
+}
+
+</style>
+<body>
+
+ <h1>Temperature Converter</h1>
+<form id="inputs-btns">
+   
+<input type="number" id="number"  min="1" required>
+<select name="" id="sel">
+<option value="Fahre">Celsius to Fahrenheight</option>
+<option value="Celsius">Fahrenheight to Celsius</option>
+</select>
+<button type="submit">convert</button>
+</form>
+<div><p id = temperature>
+
+</p></div>
+<script>
+
+
+ const select = document.getElementById("sel");
+ const input = document.getElementById("number");
+ 
+function Celsius(input){
+        let C = 9/5 * input + 32;
+        let result =  input + " "+ "is" +" " +" "  + C + "F";
+        return result;
+    }
+ 
+ 
+if(select.options[select.selectedIndex] == "celcius"){
+document.getElementById("temperature").innerHTML = Celsius();
+}
+
+
+    </script>
+
+</body>
+</html>
