@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <style>
+    /*CSS STYLING*/
+
     h1{
         text-align: center;
     }
@@ -34,41 +36,88 @@ button{
     background-color: rgb(37, 37, 236);
 }
 
+p{
+  text-align: center;
+  font-weight: 700;
+  font-size: large;
+}
 </style>
 <body>
 
  <h1>Temperature Converter</h1>
+<!-- Main form for temperature conversion -->
 <form id="inputs-btns">
    
+<!-- Input field for entering the temperature value -->
 <input type="number" id="number"  min="1" required>
-<select name="" id="sel">
-<option value="Fahre">Celsius to Fahrenheight</option>
+
+<!-- Dropdown to select conversion type , the select item is used to create a dropdown comprising of options in this case
+ choosing an option  to convert from celscius to ffahrenheight and vice-verse(MDN, nd)-->
+<select name="" id="select">
+<option value="Fahre" >Celsius to Fahrenheight</option>
 <option value="Celsius">Fahrenheight to Celsius</option>
 </select>
-<button type="submit">convert</button>
-</form>
-<div><p id = temperature>
 
+<!-- A submit Button to trigger conversion when clicked -->
+<button type="submit" id="btn">convert</button>
+
+<!-- Output area for displaying the result  once it is available, it is only visible after conversion-->
+<div><p id = temperature>
 </p></div>
+
+</form>
+
 <script>
 
+/*Get references to DOM elements by using the getElementById element,it creates a variable that contains the same id in this case 3 
+variables with the same in the case the select,input and the p elemennts(MDN,nd)*/
+const select = document.getElementById("select");
+const input = document.getElementById("number");
+const output = document.getElementById("temperature");
 
- const select = document.getElementById("sel");
- const input = document.getElementById("number");
- 
-function Celsius(input){
-        let C = 9/5 * input + 32;
-        let result =  input + " "+ "is" +" " +" "  + C + "F";
-        return result;
-    }
- 
- 
-if(select.options[select.selectedIndex] == "celcius"){
-document.getElementById("temperature").innerHTML = Celsius();
+/*Function to convert Celsius to Fahrenheit using the formula that was provided, the function returns a result
+ which is a concatenated string*/
+function Fahrenheight(inputValue){
+    let F = 9/5 * inputValue + 32;
+    let result = inputValue + "°C is " + F + "°F";
+    return result;
 }
 
+/* Function to convert Fahrenheit to Celsius  using the formula that was provided, the function returns a result
+ which is a concatenated string*/
+function Celsius(inputValue){
+    let C = 5/9 * (inputValue - 32);
+     C = C.toFixed(2); // limit to 2 decimal places
+    let result = inputValue + "°F is " + C + "°C";
+    return result;
+}
 
-    </script>
+/*document.getElementById("inputs-btns") is used to target the form element(MDN, n.d) and the  addEventListener("submit" is used to listen
+for the pressing of the submit button and function(e) contains deyails informaton about the event that has just occured in the case clicking
+on the submit button(MDN,nd)
+*/
+document.getElementById("inputs-btns").addEventListener("submit", function(e){
+
+    e.preventDefault(); // Prevent form from reloading the page whilst the event is being explicitly handled
+
+    let value = parseFloat(input.value); // Get input value as a float , parseFloat is used for float type conversion
+    let Type = select.value; // Get selected conversion type, by retrieving the value of select
+
+    let result = ""; 
+    /*declared as blank but  will be contain the value of the results from the condittional statemt*/
+    /*The if statement checks for a condition and runs a function if its true or another if its false, in this case it is checcking if
+    the type chosen is fahreignheight then it should convert to celsius or vice versa*/
+
+    if(Type === "Fahre"){
+        result = Fahrenheight(value);
+    } else {
+        result = Celsius(value);
+    }
+    output.innerHTML = result; 
+    /* displays the result of the selected function and uses the .innerHtml function to write
+    it into the p element in Html so it can be displayed(MDN,nd)*/
+});
+</script>
 
 </body>
 </html>
