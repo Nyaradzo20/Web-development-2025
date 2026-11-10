@@ -91,3 +91,14 @@ $User = [ 'name' => "Zura",
 
 ----------------
 FUNCTIONS
+----------------
+
+function sayhello(){
+echo "Hello, World!"
+}
+
+sayHello();
+
+--------------------------
+FORMS
+------------------
